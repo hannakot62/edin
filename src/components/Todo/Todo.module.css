@@ -1,0 +1,45 @@
+.container{
+    border: 2px solid var(--primary-blue);
+    border-radius: 20px;
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+    -webkit-box-shadow: 0px 0px 27px 2px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 0px 27px 2px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 0px 27px 2px rgba(34, 60, 80, 0.2);
+}
+
+.checkboxContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px dashed var(--light-gray);
+    padding: 10px;
+    flex-grow: 0.5;
+}
+.mainContainer{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 14;
+}
+.endContainer{
+    flex-grow: 0.5;
+    border-left: 1px dashed var(--light-gray);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+}
+.buttons>*{
+    margin-left: 5px;
+}
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+}
