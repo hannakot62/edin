@@ -1,0 +1,12 @@
+.headerContainer{
+     margin: 0 auto;
+    background-color: var(--light-gray);
+    color: var(--primary-blue);
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5em;
+    letter-spacing: 1em;
+}
