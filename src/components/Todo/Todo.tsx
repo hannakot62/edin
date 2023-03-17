@@ -4,14 +4,14 @@ import { lightFormat, formatDistanceToNow } from 'date-fns'
 import AppButton from '../../UI/Button/AppButton'
 import style from './Todo.module.css'
 
-interface ITodo {
+export type TodoType = {
     description: string
     added: Date
     deadline: Date
     done: boolean
 }
 
-const Todo: React.FC<ITodo> = (props: ITodo) => {
+const Todo: React.FC<TodoType> = (props: TodoType) => {
     const [checked, setChecked] = useState(props.done)
     function handleCheckbox() {
         setChecked(!checked)
