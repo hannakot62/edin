@@ -30,11 +30,17 @@ const Todo: React.FC<TodoType> = (props: TodoType) => {
             <div className={style.endContainer}>
                 <h5>{lightFormat(props.deadline, 'd/M/y')}</h5>
                 <div className={style.buttons}>
-                    <AppButton text={'edit'} type={'default'} size={'small'} />
+                    <AppButton
+                        text={'edit'}
+                        type={'default'}
+                        size={'small'}
+                        linkPath={'/edit'}
+                    />
                     <AppButton
                         text={'delete'}
                         type={'default'}
                         size={'small'}
+                        linkPath={'/main'}
                     />
                 </div>
             </div>

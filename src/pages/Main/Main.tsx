@@ -38,6 +38,7 @@ const Main: React.FC = () => {
                 className={style.button}
                 text={'Show all...'}
                 type={'link'}
+                linkPath={'/all'}
             />
         </div>
     )

@@ -21,8 +21,16 @@ const AddEdit: React.FC<IAddEdit> = (props: IAddEdit) => {
 
             <AppDatePicker className={style.date} />
             <div className={style.buttons}>
-                <AppButton text={'cancel'} type={'default'} />
-                <AppButton text={props.type} type={'primary'} />
+                <AppButton
+                    text={'cancel'}
+                    type={'default'}
+                    linkPath={'/main'}
+                />
+                <AppButton
+                    text={props.type}
+                    type={'primary'}
+                    linkPath={'/main'}
+                />
             </div>
         </div>
     )
