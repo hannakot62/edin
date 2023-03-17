@@ -4,39 +4,14 @@ import 'antd/dist/reset.css'
 import Todo from './components/Todo/Todo'
 import Header from './components/Header/Header'
 import TodoList from './components/TodoList/TodoList'
+import Main from './pages/Main/Main'
+import All from './pages/All/All'
+import AddEdit from './pages/AddEdit/AddEdit'
 
 function App() {
     return (
         <div className="App">
-            <Header />
-            <TodoList
-                todos={[
-                    {
-                        description: 'eeeee',
-                        added: new Date(),
-                        deadline: new Date(),
-                        done: true
-                    },
-                    {
-                        description: 'fffff',
-                        added: new Date(),
-                        deadline: new Date(),
-                        done: false
-                    },
-                    {
-                        description: '1',
-                        added: new Date(),
-                        deadline: new Date(),
-                        done: true
-                    }
-                ]}
-            />
-            {/*<Todo*/}
-            {/*    description={' dfhds ff fh af ashf sif if '}*/}
-            {/*    added={new Date()}*/}
-            {/*    deadline={new Date(3)}*/}
-            {/*    done={true}*/}
-            {/*/>*/}
+            <AddEdit type={'edit'} />
         </div>
     )
 }
