@@ -8,11 +8,17 @@ interface IButton {
     size?: 'large' | 'small'
     className?: string
     linkPath?: string
+    onClick?: any
 }
 
-const AppButton: React.FC<IButton> = (props: IButton, children) => {
+const AppButton: React.FC<IButton> = (props: IButton) => {
     return (
-        <Button className={props.className} size={props.size} type={props.type}>
+        <Button
+            className={props.className}
+            size={props.size}
+            type={props.type}
+            onClick={props.onClick}
+        >
             {props.linkPath ? (
                 <Link to={props.linkPath}>{props.text}</Link>
             ) : (

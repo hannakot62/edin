@@ -3,6 +3,9 @@ import AppCheckbox from '../../UI/Checkbox/AppCheckbox'
 import { lightFormat, formatDistanceToNow } from 'date-fns'
 import AppButton from '../../UI/Button/AppButton'
 import style from './Todo.module.css'
+import { useDispatch } from 'react-redux'
+import { checkTodo, deleteTodo } from '../../store/slices/allTodosSlice'
+import { setTodoToEdit } from '../../store/slices/todoToEditSlice'
 
 export type TodoType = {
     description: string
@@ -12,12 +15,26 @@ export type TodoType = {
 }
 
 const Todo: React.FC<TodoType> = (props: TodoType) => {
+    const dispatch = useDispatch()
     const [checked, setChecked] = useState(props.done)
     function handleCheckbox() {
+        dispatch(
+            checkTodo({
+                description: props.description,
+                deadline: props.deadline,
+                added: props.added,
+                done: checked
+            })
+        )
         setChecked(!checked)
-        //TODO: добавить редактирование самой записи
+    }
+    function handleEdit(todo: TodoType) {
+        dispatch(setTodoToEdit(todo))
     }
 
+    function handleDelete(todo: TodoType) {
+        dispatch(deleteTodo(todo))
+    }
     return (
         <div className={style.container}>
             <div className={style.checkboxContainer}>
@@ -35,12 +52,28 @@ const Todo: React.FC<TodoType> = (props: TodoType) => {
                         type={'default'}
                         size={'small'}
                         linkPath={'/edit'}
+                        onClick={() =>
+                            handleEdit({
+                                description: props.description,
+                                deadline: props.deadline,
+                                added: props.added,
+                                done: props.done
+                            })
+                        }
                     />
                     <AppButton
                         text={'delete'}
                         type={'default'}
                         size={'small'}
                         linkPath={'/main'}
+                        onClick={() =>
+                            handleDelete({
+                                description: props.description,
+                                deadline: props.deadline,
+                                added: props.added,
+                                done: props.done
+                            })
+                        }
                     />
                 </div>
             </div>
