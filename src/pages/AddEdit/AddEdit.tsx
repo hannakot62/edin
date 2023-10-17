@@ -11,7 +11,7 @@ interface IAddEdit {
     type: 'add' | 'edit'
 }
 
-const AddEdit: React.FC<IAddEdit> = (props: IAddEdit) => {
+export const AddEdit: React.FC<IAddEdit> = (props: IAddEdit) => {
     const dispatch = useDispatch()
     const todoToEdit = useSelector((state: any) => state.todoToEdit.todoToEdit)
 
@@ -44,8 +44,6 @@ const AddEdit: React.FC<IAddEdit> = (props: IAddEdit) => {
         )
         dispatch(removeTodoToEdit())
     }
-
-    //
 
     return (
         <div className={style.container}>
@@ -85,5 +83,3 @@ const AddEdit: React.FC<IAddEdit> = (props: IAddEdit) => {
         </div>
     )
 }
-
-export default AddEdit
