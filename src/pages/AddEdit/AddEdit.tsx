@@ -10,6 +10,8 @@ import { removeTodoToEdit } from '../../store/slices/todoToEditSlice'
 interface IAddEdit {
     type: 'add' | 'edit'
 }
+{
+}
 
 export const AddEdit: React.FC<IAddEdit> = (props: IAddEdit) => {
     const dispatch = useDispatch()
